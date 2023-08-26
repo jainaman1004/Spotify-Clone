@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/login.css">
+    <link rel="stylesheet" href="./style/signup.css">
+
+    <script src="./jsComponents/signup.js" defer></script>
+    <script src="./jsComponents/login.js" defer></script>
+
+    <script src="./data/songsAlbumData.js" defer></script>
+    <script src="./data/searchData.js" defer></script>
+    
+    <script src="./jsComponents/likedSong.js" defer></script>
+    <script src="./jsComponents/Search.js" defer></script>
+    
+    <script src="./jsComponents/Album.js" defer></script>
+    <script src="./jsComponents/BackGroundColor.js" defer></script>
+    <script src="./jsComponents/container/renderSongs.js" defer></script>
+    <script src="./jsComponents/createPlaylist.js" defer></script>
+
+    
+    <script type="module" src="./jsComponents/index.js" defer></script>
+   
+    <title>Spotify</title>
+</head>
+<body>
+
+    <!------------------------------------- Signup Page ----------------------------------------->
+
+    <div class="main-container-sign">
+        <div class="user-container">
+            <div class="login-container">
+                <div class="fill-detail">
+                    <img src="./Logo-2.png" alt="logo" class="logo"><br/>
+                    <div class="details">
+                        <form>
+                            <p class="error">Name already exist !!</p>
+                            <input type="text" class="name" placeholder="Enter Your Name..."/><br>
+                            <input type="text" class="username" placeholder="Enter Your UserName..."/><br>
+                            <input type="password" class="password" placeholder="Enter Your Password..."/><br/>
+                        </form>
+                    </div>
+                    <button class="lgn-btn">Signup</button>
+                    <div class="extra-line">
+                        <p>if you already user? <span class="lgn">Login</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!------------------------------------- Login Page ----------------------------------------->
+
+<div class="main-container-1">
+    <div class="container-1">
+        <div class="login-container-1">
+            <div class="fill-detail-1">
+                <img src="./assests/login-signup-image/Logo-2.png" alt="logo" class="logo-1"><br/>
+               
+                <div class="details-1">
+                    <p class="lgn-error">User Not found!!</p>
+                    <input type="text" class="username-1" placeholder="Enter Your UserName..."/><br>
+                    <input type="password" class="password-1" placeholder="Enter Your Password..."/><br/>
+                </div>
+                <button class="lgn-btn-1 login">Login</button><br/>
+                <button class="lgn-btn-1 signup">Signup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="global-container">
+
+    <!---------------------------------- player ------------------------------>
+    <div class = "player">
+        <div class="left-content-player">
+            <div class="left-content-image">
+                <img class="songImage" src="./images/trackPhoto.jpg" alt="trackphoto">
+            </div>
+            <div class="left-content-name">
+                <div class="songName">
+                    Song Name... 
+                </div>
+                <div>
+                    <img class="heart" src="./images/green-heart.png">
+                </div>
+                <!-- <div class="songDescription">
+                    Singer Name..
+                </div> -->
+            </div>
+        </div>
+    <!-- ----------------------------------------------------------------------------------------- -->
+      
+        
+
+        <div class="mid-content-player">
+            <!-- <div class="controls-player">
+                <img src="./images/shuffle.png" alt="shuffle">
+                <img src="./images/previous.png" alt="previos">
+                <img src="./images/play.png" alt="play">
+                <img src="./images/next.png" alt="next">
+                <img src="./images/repeat.png" alt="repeat">
+                
+            </div>
+            <div class="timeout-song">
+                <input type="range" class="slider">
+            </div> -->
+            <audio class="audio" src="" controls autoplay>
+                <!-- <source class="audioSrc" src="" type="" autoplay> -->
+            </audio>
+        </div>
+        <!-- <div class="right-content-player">
+            <div class="controls-other-player">
+                <img src="./images/mic.png" alt="mic">
+                <img src="./images/queue.png" alt="queue">
+                <img src="./images/connect.png" alt="connect">
+                <img src="./images/speaker.png" alt="volume">
+            </div>
+            <div class="volume-control">
+                <input type="range" class="volume-slider">
+            </div>
+        </div> -->
+        </div>
+    <div class="container">
+        <div class="side-bar">
+            <div class="logo">
+                <img src="./images/Logo-2.png">
+            </div>
+            <div class="sideBar-feature-box-1">
+                <div class="feature-1-content feature">
+                    <img src="./images/homepage.png">
+                    <div class="feature-1-name feature-name">
+                        Home
+                    </div>
+                </div>
+                <div class="feature-2-content feature">
+                    <img src="./images/Search.png">
+                    <div class="feature-2-name feature-name">
+                        Search
+                    </div>
+                </div>
+                <div class="feature-3-content feature">
+                    <img src="./images/Library.png">
+                    <div class="feature-3-name feature-name">
+                        Your Library
+                    </div>
+                </div>
+            </div>
+            <div class="sideBar-feature-box-2">
+                <div class="feature-4-content feature">
+                    <img src="./images/Plus.png">
+                    <div class="feature-4-name feature-name">
+                        Create PlayList
+                    </div>
+                </div>
+                <div class="feature-5-content feature">
+                    <img src="./images/Liked-Button.png">
+                    <div class="feature-5-name feature-name">
+                        Liked Songs
+                    </div>
+                </div>
+            </div> 
+                <div class="line">
+                    <div class="breakLine"></div>
+                </div>
+
+                <div class="sideBar-feature-box-3">
+                    <div class="feature-6-content feature">
+                        <img src="./images/Arrow-Down.png">
+                        <div class="feature-6-name feature-name">
+                            Install App
+                        </div>
+                    </div>
+                </div>                    
+        </div>
+        
+
+       
+
+        <div class="main-container">
+            <div class="wrap-allContent">
+            <div class="main-container-top">
+                <div class="navbar-fill-backgound"></div>
+                <div class="navbar">
+                    <div class="navbar-left-content">
+                        <img src="./images/Arrow-Left.png">
+                        <img src="./images/Arrow-Right.png">
+                    </div>
+                    <div class="navbar-right-content">
+                        <div class="upgrade">
+                            Upgrade
+                        </div>
+                        <div class="profile">
+                            <img src="./images/Profile.png">
+                            <select class="profile-list">
+                                <option>Aman-Jain</option>
+                                <option>Account</option>
+                                <option>Profile</option>
+                                <option>Upgrade to Premium</option>
+                                <option>Settings</option>
+                                <option>Log out</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="greeting">
+                    <div class="greeting-quote">
+                        Good Morning
+                    </div>
+                </div>
+                
+
+                <div class="top-container-playlist">
+                    <div class="playlist-top">
+                        <div class = "playlist-box">
+                            <div class="playlist-top-image">
+                                <img src="./images/Arjit-Singh.jpg">
+                            </div>
+                            <div class="playlist-top-name">
+                                Arjit Singh
+                            </div>
+                            <div class="hideThis">0</div>
+                            <div class="hideThis"><img class="png" src="./assests/pngImages/Arjit-Singh-removebg-preview.png"></div>
+                        </div>
+                        <div class = "playlist-box">
+                            <div class="playlist-top-image">
+                                <img src="./images/gettyimages-505358118-612x612.jpg">
+                            </div>
+                            <div class="playlist-top-name">
+                                Honey Singh
+                            </div>
+                            <div class="hideThis">1</div>
+                            <div class="hideThis"><img class="png" src="./assests/pngImages/HoneySingh-png.png"></div>
+                        </div>
+                        <div class = "playlist-box">
+                            <div class="playlist-top-image">
+                                <img src="./images/Jass-Manak-13.jpeg">
+                            </div>
+                            <div class="playlist-top-name">
+                                Jass Manak
+                            </div>
+                            <div class="hideThis">2</div>
+                            <div class="hideThis"><img class="png" src="./assests/pngImages/Jass-Manak-13-removebg-preview.png"></div>
+                        </div>
+                    </div>
+                    <div class="playlist-top">
+                        <div class = "playlist-box">
+                            <div class="playlist-top-image">
+                                <img src="./images/2569167.jpg">
+                            </div>
+                            <div class="playlist-top-name">
+                                CarryMinati
+                            </div>
+                            <div class="hideThis">3</div>
+                            <div class="hideThis"><img class="png" src="./assests/pngImages/carryMinati-png.png"></div>
+                        </div>
+                        <div class = "playlist-box">
+                            <div class="playlist-top-image">
+                                <img src="./images/Sidhu-Moosewala-Photos-72.jpg">
+                            </div>
+                            <div class="playlist-top-name">
+                                Sidhu Moosewala
+                            </div>
+                            <div class="hideThis">4</div>
+                            <div class="hideThis"><img class="png" src="./assests/pngImages/Sidhu-Moosewala-Photos-72-removebg-preview.png"></div>
+                        </div>
+                        <div class = "playlist-box">
+                            <div class="playlist-top-image">
+                                <img src="./images/2012270.jpg">
+                            </div>
+                            <div class="playlist-top-name">
+                                Neha Kakkar
+                            </div>
+                            <div class="hideThis">5</div>
+                            <div class="hideThis"><img class="png" src="./assests/pngImages/Nehakakkar-png.png"></div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="main-container-bottom">
+                
+                <div class="songs-content">
+                    <div class="playlist-titles">
+                            
+                    </div>
+                        <div class="songs-card">
+                          
+                        </div>
+                </div>
+            </div>
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- ----------------------its use for other pages rendered like liked song and albums ------------->
+            <div class="container-likedSong">
+                <div class="top-content">
+                    <div  class="contentTop">
+                        <div class="heartBox">
+                            <img src="./images/green-heart.png">
+                        </div>
+                        <div class="likedSong">Liked Songs</div>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Liked</th>
+                                    <th>Play</th>
+                                    <!-- <th>Time</th> -->
+                                </tr>
+                            </thead>
+                            <tbody class="tBody">
+                              
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+    <!------------------------------ Container Search ---------------------------------------->
+
+            <div class="container-Search">
+                <div class="Search-navbar">
+                    <div class="SearchBox">
+                        <input class="searchSongInput" type="text" placeholder="Search..." alt="searchSong">
+                    </div>
+                </div>
+                    <!-- <hr class="breakLine"> -->
+                    <div class="searchSongs">
+                        
+                    
+                    </div>
+                
+            </div>
+        <!-- </div>    -->
+
+
+
+         <!--------------------------- Container Albums --------------------------->
+
+            <div class="container-Albums">
+                <!-- <div class="Album-Songs">
+                    <div class="albumImage"><img src="./assests/pngImages/Arjit-Singh-removebg-preview.png">
+                    <div>${singerName}</div>
+                    </div>
+                </div>
+                <div class="renderAlbumSong">
+                jhgsdhjgfhjghsgdfgjhgsfdghgsdgfjgj
+                </div> -->
+               <!-- <div> 
+                    <div class="Album-Songs">
+                        
+                    </div>
+                    <div class="renderAlbumSong">
+
+                    </div>
+                </div> -->
+            </div>
+
+
+
+         <!--------------------------- Container createPlayList --------------------------->
+
+
+            <div class="container-createPlayList">
+                <hr class="breakLine">
+                <div class="createPlayList-songs">
+                    
+                </div> 
+                
+            </div>
+     </div>
+
+</div>
+
+</body>
+</html>
